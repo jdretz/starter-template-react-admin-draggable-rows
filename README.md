@@ -1,7 +1,7 @@
 
 # How to Create Draggable Rows with React Admin Starter Project
 
-This a the beginning repository for a tutorial on implementing draggable.
+This a the beginning repository for a tutorial on implementing draggable rows in React Admin.
 
 <img width=900 height=328 src="https://endertech.com/wp-content/uploads/2021/03/image3.gif.webp" alt="rows being dragged into order" />
 
