@@ -81,15 +81,16 @@ export const handlers = [
         let forms = getForms();
         const { id } = req.params;
         const updatedForm = req.body;
-        const index = await forms.findIndex(ques => ques.id === Number(id));
+        const index = await forms.findIndex(form => form.id === Number(id))
+        const oldForm = forms[index];
 
-        forms.splice(index, 1, updatedForm);
+        const newForm = {...oldForm, ...updatedForm}
+        forms.splice(index, 1, newForm);
         localStorage.setItem('forms', JSON.stringify(forms));
-
 
         return res(
             ctx.status(202),
-            ctx.json(updatedForm)
+            ctx.json(newForm)
         )
     }),
     rest.delete('/forms/:id', async (req, res, ctx) => {
